@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+    
+    <!-- include partials .ejs file (need pass parameter) -->
+    <%- include('partials/navbar', {page: '/about'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--daisyUI Hero-->
+        <div
+          class="hero bg-base-100 min-h-[30vh] flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">About</h1>
+              <p class="py-6">All about me.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Grid-->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-base">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_Racket_and_Balls.jpg"
+            alt="A representation of me"
+            class="w-full h-auto object-cover rounded-xl shadow-lg"
+          />
+          <div>
+            <div class="mb-6">
+              <h2 class="text-lg font-bold">Who am I?</h2>
+              <p class="mt-2">
+                I worked as a semiconductor engineer for more than five years in
+                Taiwan, where the industry continues to grow rapidly. In my
+                previous role, my primary responsibilities were designing chips
+                and overseeing the device manufacturing processes, including
+                developing and producing cutting-edge chips with the potential
+                to influence the world.
+              </p>
+              <p class="mt-2">
+                During my years of work, even though I was in the hardware
+                field, I observed a significant transformation in software
+                development, largely driven by advancements in machine learning
+                (ML) and artificial intelligence (AI). Additionally, I noticed
+                that many roles in the hardware industry are being replaced by
+                AI and ML, further emphasizing the profound impact of these
+                technologies on the industry.
+              </p>
+            </div>
+
+            <div class="mb-6">
+              <h2 class="text-lg font-bold">To be a software engineer</h2>
+              <p class="mt-2">
+                My background is in semiconductors, and as a beginner in the
+                software field, I have limited knowledge. However, I am deeply
+                passionate about learning various programming languages.
+              </p>
+              <p class="mt-2">
+                I began with Python, R, and MATLAB, where I developed automation
+                programs to streamline routine tasks and worked on Data
+                Structures and Algorithms (DSA) to optimize speed and memory
+                usage.
+              </p>
+              <p class="mt-2">
+                I also contributed to the development of a device simulation
+                system integrating HSPICE, SPECTRE, and C++. Additionally, I
+                created regression test cases using Perl and various scripting
+                languages.
+              </p>
+              <p class="mt-2">
+                I understand that in the software field, it is essential to
+                continuously learn and adapt to new technologies. I am committed
+                to pushing myself to achieve this goal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>

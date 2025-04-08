@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+    
+    <!-- include partials .ejs file (need pass parameter) -->
+    <%- include('partials/navbar', {page: '/userHistory'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--daisyUI Hero-->
+        <div
+          class="hero bg-base-100 min-h-[30vh] flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold"><%= session.user.userName %></h1>
+              <p class="py-6">User History: <%= session.user.email %></p>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+            <!--daisyUI table-->
+            <table class="table table-zebra text-base">
+              <thead>
+                <tr>
+                    <th>Login Date/Time</th>
+                    <th>Client Information</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% session.user.loginHistory.forEach(data=>{ %>
+              <tr>
+                  <td class="font-bold">
+                    <%= new Date(data.dateTime).toLocaleString("en-US", {
+                      weekday: "short",
+                      year: "numeric",
+                      month: "short",
+                      day: "2-digit",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      second: "2-digit",
+                      hour12: false,
+                      timeZoneName: "long"
+                    }).replace(",", "") %>
+                  </td>
+                  <td><%= data.userAgent %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+            </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>

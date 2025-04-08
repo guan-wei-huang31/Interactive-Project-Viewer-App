@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+
+    <!-- include partials .ejs file -->
+    <%- include('partials/navbar', {page:'/500'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--daisyUI Hero-->
+        <div
+          class="hero bg-base-100 min-h-screen flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">500</h1>
+              <p class="py-6">
+                <%= message %>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>

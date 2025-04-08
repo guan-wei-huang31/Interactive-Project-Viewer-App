@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+
+    <!-- include partials .ejs file -->
+    <%- include('partials/navbar', {page:'/home'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--container mx-auto: responsive-->
+
+        <!--daisyui hero component-->
+        <div
+          class="hero bg-base-100 min-h-screen flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">Hello there</h1>
+              <p class="py-6">
+                Welcome to Climate Solutions - Discover sustainable innovations
+                and join us in climate action to build a greener future where
+                small changes make a big impact!
+              </p>
+              <a href="/solutions/projects" class="btn btn-accent"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--daisyUI Card + Grid-->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 p-4">
+          <!--Card 1-->
+          <div class="card bg-base shadow-xl">
+            <div class="card-body p-1">
+              <img
+                class="w-full h-auto object-cover rounded-xl"
+                src="https://drawdown.org/sites/default/files/solutions2020/2-iStock-1146294272.jpg"
+                alt="Improved Aquaculture"
+              />
+              <h2 class="card-title text-lg">Improved Aquaculture</h2>
+              <p class="text-base line-clamp-3">
+                Aquaculture is one of the fastest-growing animal food sectors.
+                Because some aquaculture systems are highly energy intensive,
+                ensuring part of the on-site energy consumption is based on
+                renewable resources would reduce greenhouse gas emissions.
+              </p>
+              <div class="card-actions justify-end">
+                <a class="btn btn-soft btn-accent btn-sm" href="/solutions/projects/10"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!--Card 2-->
+          <div class="card bg-base shadow-xl">
+            <div class="card-body p-1">
+              <img
+                class="w-full h-auto object-cover rounded-xl"
+                src="https://drawdown.org/sites/default/files/solutions/solution_farmlandirrigation01.jpg"
+                alt="Farm Irrigation Efficiency"
+              />
+              <h2 class="card-title text-lg">Farm Irrigation Efficiency</h2>
+              <p class="text-base line-clamp-3">
+                Drip and sprinkler irrigation, among other practices and
+                technologies, make farm water use less energy/fuel intensive and
+                conserve significant amounts of freshwater.
+              </p>
+              <div class="card-actions justify-end">
+                <a class="btn btn-soft btn-accent btn-sm" href="/solutions/projects/5"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!--Card 3-->
+          <div class="card bg-base shadow-xl">
+            <div class="card-body p-1">
+              <img
+                class="w-full h-auto object-cover rounded-xl"
+                src="https://drawdown.org/sites/default/files/solutions2020/solution_nutrientmanagement02.jpg"
+                alt="Nutrient Management"
+              />
+              <h2 class="card-title text-lg">Nutrient Management</h2>
+              <p class="text-base line-clamp-3">
+                Overuse of nitrogen fertilizers-a frequent phenomenon in
+                agriculture—results in the production of nitrous oxide, a potent
+                greenhouse gas. More judicious use of fertilizers can curb these
+                emissions and reduce energy-intensive fertilizer production.
+              </p>
+              <div class="card-actions justify-end">
+                <a class="btn btn-soft btn-accent btn-sm" href="/solutions/projects/25"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--daisyUI footer-->
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>

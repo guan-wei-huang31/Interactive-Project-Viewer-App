@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+
+    <!-- include partials .ejs file -->
+    <%- include('partials/navbar', {page:'/solutions/projects'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--daisyUI Hero-->
+        <div
+          class="hero bg-base-100 min-h-[30vh] flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">Projects</h1>
+              <p class="py-6">
+                Browse the current list of Projects in our database. Click the theme to filter by sectors such as:
+              </p>
+              <a class="btn btn-sm btn-soft btn-accent" href="/solutions/projects?sector=Industry">Industry</a>
+              <a class="btn btn-sm btn-soft btn-accent" href="/solutions/projects?sector=Transportation">Transportation</a>
+              <a class="btn btn-sm btn-soft btn-accent" href="/solutions/projects?sector=Electricity">Electricity</a>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <!--daisyUI table-->
+          <table class="table table-zebra text-base">
+            <% projects.forEach(data=>{ %>
+            <tr>
+                <td class="font-bold"><%= data.title %></td>
+                <!--JOIN, Need sector object -->
+                <td><a class="btn btn-sm btn-soft" href="/solutions/projects?sector=<%= data.Sector.sector_name %>"><%= data.Sector.sector_name %> <a></td>
+                <td><%= data.summary_short %></td>
+                <td><a class="btn btn-sm btn-soft" href="/solutions/projects/<%= data.id %>">details</a></td>
+            </tr>
+            <% }); %>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>

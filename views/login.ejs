@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-800">
+    <!--flex flex col: flexbox, bg-gray-100: background color gray-->
+    
+    <!-- include partials .ejs file (need pass parameter) -->
+    <%- include('partials/navbar', {page: '/login'}) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4">
+        <!--daisyUI Hero-->
+        <div
+          class="hero bg-base-100 min-h-[30vh] flex items-center justify-center rounded-xl"
+        >
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">Login</h1>
+              <p class="py-6">Please provide your credentials below.</p>
+            </div>
+          </div>
+        </div>
+        <!--Form: user name and password-->
+        <div class="mt-12">
+        <form method="post" action="/login" class="space-y-4">
+            <div class="flex flex-col">
+              <label for="userName" class="text-sm font-semibold text-gray-600">User Name</label>
+              <input id="userName" type="text" name="userName" placeholder="User Name" required value="<%= userName %>" 
+                     class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
+            </div>
+            <div class="flex flex-col">
+                <label for="password" class="text-sm font-semibold text-gray-600">Password</label>
+                <input id="password" type="password" name="password" placeholder="Password" required 
+                       class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Login</button>
+        </form>
+        </div>
+        <% if (errorMessage) { %>
+        <div class="alert alert-error">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span><%= errorMessage %></span>
+        </div>
+        <% } %>
+      </div>
+    </main>
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © 2025 - All right reserved by Guan-Wei Hunag</p>
+      </aside>
+    </footer>
+  </body>
+</html>
