@@ -26,9 +26,17 @@ An interactive full-stack web application for browsing and managing categorized 
 
 ## 📸 Screenshots
 
-> _(Insert screenshots here, e.g., home page, project list, login, edit project)_  
-> You can add screenshots by uploading them to the repo and referencing them like:  
-> `![Home Page](./screenshots/home.png)`
+Home:
+![Home Page](./screenshots/home.png)
+
+Projects Table:
+![Projects Page](./screenshots/projects.png)
+
+Register Form:
+![Projects Page](./screenshots/register.png)
+
+Project page:
+![Projects Page](./screenshots/project.png)
 
 ---
 
